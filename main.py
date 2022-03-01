@@ -28,24 +28,26 @@ soundnum=0
 ishide=1
 hiden=[]
 datayaml="""#请勿使用tab, 请使用空格
-whitelist:
-  class: [Shell_TrayWnd]
-  name_strict: []
-  name_loose: []
-blacklist:
-  class: []
-  name_strict: [简单整理]
-  name_loose: []
-whenhideopenlist:
-  class: []
-  name_strict: []
-  name_loose: []
-command: []
-whenhidenosound: true
-whenshowopensound: true
-keys: [shift,ctrl,d]
-keychecktime: 0.05
-windowchecktime: 1
+whitelist: #当隐藏时不会隐藏的窗口
+  class: [Shell_TrayWnd] #按照类查找窗口
+  name_strict: [] #按照严格的窗口名查找
+  name_loose: [] #按照关键字查找窗口名
+
+blacklist: #哪怕没有被记录也会尝试隐藏的窗口
+  class: [] #按照类查找窗口
+  name_strict: [简单整理] #按照严格的窗口名查找
+  name_loose: [] #按照关键字查找窗口名
+
+whenhideopenlist: #当隐藏时会被全屏打开的窗口
+  class: [] #按照类查找窗口
+  name_strict: [] #按照严格的窗口名查找
+  name_loose: [] #按照关键字查找窗口名
+
+whenhidenosound: true #隐藏时是否静音
+whenshowopensound: true #当取消隐藏时是否恢复声音
+keys: [shift,ctrl,d] #你的切屏快捷键
+keychecktime: 0.05 #多长时间检查一下你的快捷键是否按下
+windowchecktime: 1 #多长时间检查你有哪些窗口在使用
 """
 
 try:
